@@ -25,6 +25,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+SW_VERSION=`cat /boot.ver`
+setprop t2m.sw.version $SW_VERSION
 
 target=`getprop ro.board.platform`
 if [ -f /sys/devices/soc0/soc_id ]; then
