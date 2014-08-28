@@ -372,12 +372,14 @@ service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     user root
     oneshot
 
+#[BUGFIX]-Mod-BEGIN by TCTNB.xiaomanwang,08/21/2014,760647,fix rw trace error
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
-    user bluetooth
-    group bluetooth net_bt_admin
+    user root
+    group bluetooth net_bt_admin root
     disabled
     oneshot
+#[BUGFIX]-Mod-END by TCTNB.xiaomanwang
 
 on property:bluetooth.hciattach=true
     start hciattach
