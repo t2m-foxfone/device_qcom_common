@@ -105,6 +105,7 @@ do
   echo 0 > $file/accept_ra_defrtr
 done
 echo 1 > /proc/sys/net/ipv6/conf/default/accept_ra_defrtr
+echo 2 > /proc/sys/net/ipv6/conf/default/use_tempaddr
 
 #
 # Start gpsone_daemon for SVLTE Type I & II devices
